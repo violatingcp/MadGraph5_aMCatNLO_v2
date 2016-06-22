@@ -129,10 +129,10 @@ aparser = argparse.ArgumentParser(description='Process benchmarks.')
 #aparser.add_argument('-carddir','--carddir'   ,action='store',dest='carddir',default='Cards/VectorDiJet1Gamma/'   ,help='carddir')
 #aparser.add_argument('-carddir','--carddir'   ,action='store',dest='carddir',default='Cards/DMSpin0_ggH12j/'   ,help='carddir')
 #aparser.add_argument('-carddir','--carddir'   ,action='store',dest='carddir',default='Cards/DMSpin0_ggPhi12j_g1/'   ,help='carddir')
-aparser.add_argument('-carddir','--carddir'   ,action='store',dest='carddir',default='Cards/DMSpin0_qqPhiz_g1/'   ,help='carddir')
+aparser.add_argument('-carddir','--carddir'   ,action='store',dest='carddir',default='Cards/DMSpin0_ggPhiz_g1/'   ,help='carddir')
 #aparser.add_argument('-carddir','--carddir'   ,action='store',dest='carddir',default='Cards/DMSpin1_V12j_g1/',help='carddir')
 #aparser.add_argument('-name'   ,'--name'      ,action='store',dest='name'   ,default='VectorDiJet1Gamma'       ,help='name')
-aparser.add_argument('-name'   ,'--name'       ,action='store',dest='name'   ,default='DMSpin0_qqPhiz_g1'   ,help='name')
+aparser.add_argument('-name'   ,'--name'       ,action='store',dest='name'   ,default='DMSpin0_ggPhiz_g1'   ,help='name')
 aparser.add_argument('-q'      ,'--queue'      ,action='store',dest='queue'  ,default='2nw'                   ,help='queue')
 #aparser.add_argument('-dm'      ,'--dmrange'   ,dest='dmrange' ,nargs='+',type=int,default=[1,10,50,100,150,500,1000]                ,help='mass range')
 #aparser.add_argument('-med'     ,'--medrange'  ,dest='medrange',nargs='+',type=int,default=[10,20,50,100,200,300,500,1000,2000,10000],help='mediator range')
@@ -245,8 +245,8 @@ for med    in args1.medrange:
                     job_file.write('cp %s %s_%s_%s_%s/                   \n' % (cust[0],args1.name,tmpMed,dm,pProc))
                     job_file.write('cd  %s_%s_%s_%s                      \n' % (args1.name,tmpMed,dm,pProc) )
                 for f in parameterfiles:
-                    #if f.find('dat') > -1 and f.find('run_card')  < 0:
-                    #    job_file.write('mv ../%s Cards \n' % f)
+                    if f.find('dat') > -1 and f.find('run_card')  < 0:
+                        job_file.write('mv ../%s Cards \n' % f)
                     if f.find('.f')  > -1:
                         job_file.write('mv ../%s SubProcesses \n' % f)
                 job_file.write('echo "done"              >  makegrid.dat  \n')
