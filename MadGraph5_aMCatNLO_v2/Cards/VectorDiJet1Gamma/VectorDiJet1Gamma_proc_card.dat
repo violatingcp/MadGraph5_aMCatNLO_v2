@@ -1,0 +1,8 @@
+import Zprime_UFO_MED_XMASS_PROC
+generate p p > zpl a, zpl > j j
+add process p p > zpl a, zpl > b b~
+add process p p > zpl a j, zpl > j j
+add process p p > zpl a j, zpl > b b~
+output VectorDiJet1Gamma_MED_XMASS_PROC -nojpeg
+
+

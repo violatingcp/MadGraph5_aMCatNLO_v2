@@ -1,0 +1,5 @@
+import DMsimp_s_spin0_MED_XMASS_PROC
+# Define multiparticle labels
+generate p p > xd xd~ z 
+output DMSpin0_qqPhiz_g1_MED_XMASS_PROC -nojpeg
+

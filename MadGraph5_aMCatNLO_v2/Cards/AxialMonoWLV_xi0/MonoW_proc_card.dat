@@ -1,0 +1,11 @@
+import axial_monoW_model_MED_XMASS
+define lep+ = e+ mu+ ta+
+define lep- = e- mu- ta-
+generate    p p  > ~n1 Xn1 w-,     w- > lep- vl
+add process p p  > ~n1 Xn1 w- j,   w- > lep- vl
+add process p p  > ~n1 Xn1 w- j j, w- > lep- vl
+add process p p  > ~n1 Xn1 w+  ,   w+ > lep+ vl
+add process p p  > ~n1 Xn1 w+ j,   w+ > lep+ vl
+add process p p  > ~n1 Xn1 w+ j j, w+ > lep+ vl
+output AxialMonoWLV_xi0_MED_XMASS -nojpeg
+

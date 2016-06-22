@@ -1,0 +1,6 @@
+import axial_monoW_model_MED_XMASS_PROC
+generate    p p  > ~n1 Xn1 z
+add process p p  > ~n1 Xn1 z j
+add process p p  > ~n1 Xn1 z j j
+output AxialMonoZ_MED_XMASS_PROC -nojpeg
+

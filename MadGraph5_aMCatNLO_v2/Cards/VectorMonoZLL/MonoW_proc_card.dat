@@ -1,0 +1,6 @@
+import vector_monoW_model_MED_XMASS_PROC
+generate    p p  > ~n1 Xn1 z     ,z > l+ l-
+add process p p  > ~n1 Xn1 z j   ,z > l+ l-
+add process p p  > ~n1 Xn1 z j j ,z > l+ l-
+output VectorMonoZLL_MED_XMASS_PROC -nojpeg
+

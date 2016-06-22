@@ -1,0 +1,14 @@
+import DMScalar_model_MED_XMASS
+# Define multiparticle labels
+define p = g u c d s b u~ c~ d~ s~ b~
+define j = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+
+define l- = e- mu-
+define vl = ve vm vt
+define vl~ = ve~ vm~ vt~
+generate p p > t t~ chi chi~ @0
+add process  p p > t t~ chi chi~ j @1
+#add process  p p > t t~ chi chi~ j j @2 
+# KH, phim is implicit.  MadSpin chokes if explicit
+output DMScalar_MED_XMASS -nojpeg
+
